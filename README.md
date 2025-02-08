@@ -103,7 +103,7 @@ Voici une vue d'ensemble des fichiers et dossiers principaux du projet :
 - "Y a t-il les valeurs manquantes dans mon dataset ?"
 - "Génère un scatter plot entre 'revenu' et 'score_credit'."
 
-## Contributeurs 🤝
+## Auteur
 - **Yassine Ben Abdallah**
 
 ## Licence 📜
