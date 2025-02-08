@@ -58,7 +58,7 @@ Voici une vue d'ensemble des fichiers et dossiers principaux du projet :
 ### Étapes d'installation
 1. **Cloner le projet**
    ```bash
-   git clone https://github.com/nadyby/Databot.git
+   git clone https://github.com/yassineba13/Databot.git
    cd Databot
    ```
 2. **Créer un environnement virtuel (optionnel mais recommandé)**
