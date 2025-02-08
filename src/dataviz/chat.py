@@ -9,7 +9,6 @@ import plotly.express as px
 import plotly.graph_objects as go
 import plotly.io as pio
 import streamlit as st
-from PIL import Image
 
 # Load environment variables directly
 load_dotenv()
@@ -33,7 +32,8 @@ class DataChatbot:
         {df.dtypes.to_string()}
 
         Numeric Columns: {list(df.select_dtypes(include=['int64', 'float64']).columns)}
-        Categorical Columns: {list(df.select_dtypes(include=['object', 'category']).columns)}
+        Categorical Columns: {list(
+            df.select_dtypes(include=['object', 'category']).columns)}
         """
         
         # Prompt for visualization code generation
@@ -108,7 +108,7 @@ class DataChatbot:
         with open(plot_path, "rb") as image_file:
             base64_image = base64.b64encode(image_file.read()).decode('utf-8')
         
-        prompt = f"""Analyze this visualization image carefully:
+        prompt = """Analyze this visualization image carefully:
                     [Image of data visualization]
 
                     Please provide a comprehensive interpretation. Include:
@@ -148,8 +148,10 @@ def process_chat_query(query, df):
         
         # Execute the generated code
         if viz_result and 'code' in viz_result:
-            st.markdown(f"**Visualization Type:** {viz_result.get('plot_type', 'Unknown')}")
-            st.markdown(f"**Explanation:** {viz_result.get('explanation', 'No explanation provided')}")
+            st.markdown(f"**Visualization Type:** {viz_result.get(
+                'plot_type', 'Unknown')}")
+            st.markdown(f"**Explanation:** {viz_result.get(
+                'explanation', 'No explanation provided')}")
             
             
             # Create a temporary file to save the plot

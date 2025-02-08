@@ -1,11 +1,6 @@
 import unittest
 import pandas as pd
-import os
-import tempfile
-import base64
-from PIL import Image
-from unittest.mock import Mock, patch
-from anthropic import Anthropic
+from unittest.mock import patch
 from src.dataviz.chat import DataChatbot  
 
 class TestDataChatbot(unittest.TestCase):
@@ -32,7 +27,7 @@ class TestDataChatbot(unittest.TestCase):
 
     def test_dataframe_preprocessing(self):
         # Test that DataFrame preprocessing works correctly
-        chatbot = DataChatbot(self.api_key)
+        DataChatbot(self.api_key)
             
         # Verify column information extraction
         self.assertTrue(len(self.test_df.columns) > 0)

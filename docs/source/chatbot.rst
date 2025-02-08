@@ -1,0 +1,2 @@
+.. automodule:: databot.chat
+   :members:

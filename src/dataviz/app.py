@@ -1,9 +1,7 @@
 import streamlit as st
 import pandas as pd
-import json
 from chat import process_chat_query
 from utils import clean_dataset
-import io
 
 def load_data(uploaded_file):
     if uploaded_file is not None:
@@ -17,7 +15,7 @@ def load_data(uploaded_file):
             elif file_extension == 'json':
                 df = pd.read_json(uploaded_file)
             else:
-                st.error('Unsupported file format. Please upload CSV, XLS, or JSON files.')
+                st.error('Unsupported format. Please upload CSV, XLS, or JSON files.')
                 return None
             return df
         except Exception as e:
@@ -82,7 +80,8 @@ def main():
                 st.write(response)
             
             # Add assistant response to chat history
-            st.session_state.chat_history.append({"role": "assistant", "content": response})
+            st.session_state.chat_history.append(
+                {"role": "assistant", "content": response})
 
 if __name__ == "__main__":
     main()
