@@ -6,7 +6,7 @@ DataBot est une application interactive développée avec **Streamlit** et le mo
 ## 🌐 View the App
 
 You can access the Streamlit-hosted application here:  
-➡️ [DataExplorer AI Assistant](https://databotyba.streamlit.app/)
+➡️ [DataBot](https://databotyba.streamlit.app/)
 
 
 
